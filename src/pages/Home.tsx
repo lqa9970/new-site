@@ -1,8 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import Navbar from "../components/Navbar";
 
-import bgImage from "../images/code2.jpg";
-import bgBlob from "../images/blob.svg";
 import laptopImage from "../images/laptop2.jpg";
 import Footer from "../components/Footer";
 

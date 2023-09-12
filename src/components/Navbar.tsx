@@ -8,7 +8,7 @@ const Navbar = () => {
           <div className="text-3xl font-semibold lg:text-4xl">
             <Link to="/"> Quang Anh</Link>
           </div>
-          <ul className="items-center justify-between hidden w-2/5 space-x-8 text-xl lg:flex">
+          <ul className="items-center justify-between hidden w-1/2 space-x-8 text-xl lg:flex">
             <li>
               <Link to="/" className="">
                 Home
