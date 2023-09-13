@@ -27,17 +27,18 @@ const Technical = () => {
         <section className="mt-10 bg-slate-50 dark:bg-slate-900" id="stacks">
           <h2 className="text-3xl font-semibold">Stacks</h2>
           <div className="flex flex-wrap items-center justify-around w-full m-auto mt-6 xl:w-2/3">
-            {stacks.map((stack) => (
-              <>
-                <div className="flex flex-col items-center w-1/5 h-40 my-2 mr-2 font-medium border-4 rounded-xl border-slate-900 bg-slate-50 dark:bg-slate-900 dark:border-slate-50">
-                  {stack.name}
-                  <img
-                    className="object-contain w-auto m-auto border-4 rounded-full border-slate-900 dark:border-slate-50 h-2/3"
-                    src={stack.img}
-                    alt={stack.name}
-                  />
-                </div>
-              </>
+            {stacks.map((stack, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center w-1/5 h-40 my-2 mr-2 font-medium border-4 rounded-xl border-slate-900 bg-slate-50 dark:bg-slate-900 dark:border-slate-50"
+              >
+                {stack.name}
+                <img
+                  className="object-contain w-auto m-auto border-4 rounded-full border-slate-900 dark:border-slate-50 h-2/3"
+                  src={stack.img}
+                  alt={stack.name}
+                />
+              </div>
             ))}
           </div>
         </section>

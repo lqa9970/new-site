@@ -63,9 +63,6 @@ const ThemeSwitcher = () => {
     }
   };
 
-  console.log("activeTheme", activeTheme);
-  console.log(localStorage);
-
   useEffect(() => {
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (
