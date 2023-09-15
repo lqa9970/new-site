@@ -1,9 +1,20 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div>
-      <nav className="z-50 flex justify-center w-full py-8 text-center transition-all duration-200 bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50">
+      <nav className="z-50 flex justify-center w-full py-8 text-center transition-all duration-1000 h-1/5 bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50">
         <div className="container flex items-center justify-between ">
           <div className="text-3xl font-semibold lg:text-4xl">
             <Link to="/"> Quang Anh</Link>
@@ -53,7 +64,7 @@ const Navbar = () => {
             anhlequang1998@gmail.com
           </button> */}
         </div>
-        <button>
+        <button onClick={openModal} className="lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -69,6 +80,26 @@ const Navbar = () => {
             />
           </svg>
         </button>
+        {showModal && (
+          <>
+            <div className="fixed inset-0 z-50 flex items-center justify-center h-screen">
+              <div
+                onClick={closeModal}
+                className="fixed inset-0 flex items-center bg-black bg-opacity-50 z-1 backdrop-blur-sm"
+              >
+                <div
+                  onClick={(e) => e.stopPropagation()}
+                  className="relative w-2/3 p-8 m-auto bg-white z-3"
+                >
+                  <p className="text-red-700">ABC</p>
+                  <button onClick={closeModal} className="text-red-500">
+                    X
+                  </button>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </nav>
     </div>
   );
