@@ -36,9 +36,9 @@ const Home = () => {
               <div className="text-4xl font-semibold md:text-5xl xl:text-7xl">
                 Quang Anh Le
               </div>
-              <div className="mt-3 text-lg md:mt-5 xl:text-xl">
+              <div className="mt-3 text-lg md:mt-5 xl:text-x">
                 And I am a{" "}
-                <span>
+                <span className="text-sky-400">
                   <TypeAnimation
                     sequence={[
                       "Full-Stack Developer",
@@ -63,7 +63,7 @@ const Home = () => {
               <svg
                 viewBox="0 0 200 200"
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-auto w-72 md:w-96 animate-blob moving-blob"
+                className="h-auto w-72 md:w-96 animate-blob moving-blob text-sky-50"
               >
                 <path
                   fill="#1E293B"
@@ -105,7 +105,7 @@ const Home = () => {
             </div>
             <div className="w-full mt-6 md:w-6/12 lg:w-7/12 xl:w-6/12 md:mt-0">
               <div className="text-xl font-semibold text">
-                A <span className="text-yellow-500">Full-Stack Developer</span>
+                A <span className="text-sky-400">Full-Stack Developer</span>
               </div>
               <p className="mt-2 text-justify">
                 For me, challenges are what define who we are. Stepping out of
@@ -143,7 +143,7 @@ const Home = () => {
               {stacks.map((stack, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center w-1/2 h-40 my-2 mr-2 font-medium border-4 md:w-1/5 rounded-xl border-slate-900 bg-slate-50 dark:bg-slate-900 dark:border-slate-50"
+                  className="flex flex-col items-center w-1/2 h-40 my-2 mr-2 font-medium border-4 md:w-1/5 rounded-xl border-slate-900 dark:border-slate-50"
                 >
                   {stack.name}
                   <img

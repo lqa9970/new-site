@@ -19,29 +19,29 @@ const Navbar = () => {
           <div className="text-3xl font-semibold lg:text-4xl">
             <Link to="/"> Quang Anh</Link>
           </div>
-          <ul className="items-center justify-between hidden w-1/2 space-x-8 text-xl lg:flex">
-            <li>
+          <ul className="items-center justify-between hidden w-1/2 space-x-8 text-xl lg:flex ">
+            <li className="hover:text-sky-400">
               <Link to="/" className="">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="#About" className="">
+              <Link to="#About" className="hover:text-sky-400">
                 About me
               </Link>
             </li>
             <li>
-              <Link to="/tech/#stack" className="">
+              <Link to="/tech/#stack" className="hover:text-sky-400">
                 Stacks
               </Link>
             </li>
             <li>
-              <Link to="/tech#projects" className="">
+              <Link to="/tech#projects" className="hover:text-sky-400">
                 Projects
               </Link>
             </li>
             <li>
-              <Link to="/#contact" className="">
+              <Link to="/#contact" className="hover:text-sky-400">
                 Contact
               </Link>
             </li>

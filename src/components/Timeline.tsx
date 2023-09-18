@@ -22,7 +22,7 @@ const Timeline = () => {
       <ol className="relative w-4/5 mx-auto my-8 border-l border-gray-200 lg:w-2/3 xl:w-2/5 dark:border-gray-700">
         <div onClick={openModal} className="cursor-pointer">
           <li className="mb-10 ml-6">
-            <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+            <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-slate-50 dark:ring-slate-900 dark:bg-blue-900">
               <svg
                 className=" duration-1000 w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
                 aria-hidden="true"
