@@ -126,7 +126,7 @@ const Timeline = () => {
               >
                 <div
                   onClick={(e) => e.stopPropagation()}
-                  className="relative w-2/3 p-8 m-auto bg-white"
+                  className="relative w-2/3 p-8 m-auto bg-slate-50 dark:bg-slate-900"
                 >
                   <Modal images={[img1, img2, img3]} />
                   <button onClick={closeModal}>X</button>

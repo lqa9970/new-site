@@ -73,7 +73,7 @@ const Home = () => {
               </svg>
             </div>
           </div>
-          <div className="justify-center">
+          <a href="#About" className="justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -88,7 +88,7 @@ const Home = () => {
                 d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25"
               />
             </svg>
-          </div>
+          </a>
         </div>
       </section>
 
@@ -158,7 +158,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="relative mt-5 bg-fixed bg-cover">
+      <section className="relative bg-fixed bg-cover mt-">
         <div className="flex flex-col mt-10x">
           <h2 className="text-3xl font-semibold text-center delay-0">
             Experiences
@@ -170,6 +170,13 @@ const Home = () => {
       <section className="contact" id="contact">
         {/* Contact section content */}
       </section>
+
+      <div className="flex flex-col items-center">
+        <p className="fixed left-1 bottom-20 z-[9999] after:content-[''] text-xs font-thin transform rotate-90">
+          anhlequang1998@gmail.com
+          <span className="after:content-[''] after:absolute after:w-1/2 after:h-0.5 after:bg-gray-400 after:right-0 after:bottom-0"></span>
+        </p>
+      </div>
 
       <Footer />
     </div>
