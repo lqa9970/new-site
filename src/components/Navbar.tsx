@@ -26,9 +26,9 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="#About" className="hover:text-sky-400">
+              <a href="#About" className="hover:text-sky-400">
                 About me
-              </Link>
+              </a>
             </li>
             <li>
               <Link to="/tech/#stack" className="hover:text-sky-400">
@@ -41,9 +41,9 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/#contact" className="hover:text-sky-400">
+              <a href="#contact" className="hover:text-sky-400">
                 Contact
-              </Link>
+              </a>
             </li>
           </ul>
           {/* <button className="hidden text-base lg:flex">

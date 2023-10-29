@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div>
-      <footer className="bottom-0 w-full py-4 text-center transition-all duration-1000 text-slate-800 bg-slate-50 dark:bg-slate-900 dark:text-slate-50">
+      <footer className="bottom-0 w-full py-4 text-center transition-all duration-1000 text-slate-900 bg-slate-50 dark:bg-slate-900 dark:text-slate-50">
         <span>
           Created by{" "}
           <a href="https://www.linkedin.com/in/kwang-anh-le/" target="_blank">

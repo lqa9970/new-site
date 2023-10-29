@@ -1,29 +1,61 @@
+import { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Navbar from "../components/Navbar";
 
 import laptopImage from "../images/laptop2.jpg";
 import Footer from "../components/Footer";
 import Timeline from "../components/Timeline";
+import ContactForm from "../components/ContactForm";
 
+// images
 import reactImg2 from "../images/react-1-logo-svg-vector.svg";
 import vueImg from "../images/vue3.png";
 import angularImg from "../images/angular.png";
 import nextImg from "../images/next.png";
-import blobImg from "../images/blob.svg";
+import tsImg from "../images/Ts.png";
+import awsImg from "../images/aws.png";
+import nodeImg from "../images/node3.jpg";
+import pythonImg from "../images/python3.png";
+import restImg from "../images/rest.png";
+import dbImg from "../images/database.jpg";
+import dotImg from "../images/dot.png";
+
+//icons
+import { BookUser, Mail, Smartphone } from "lucide-react";
 
 const Home = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleEmailClick = () => {
+    window.location.href = `mailto:${"anhlequang1998@gmail.com"}`;
+  };
+
   const stacks = [
     { name: "React", img: reactImg2 },
+    { name: "TypeScript", img: tsImg },
     { name: "Vue", img: vueImg },
     { name: "Angular", img: angularImg },
-    { name: "Next", img: nextImg },
-    { name: "Next", img: nextImg },
-    { name: "Next", img: nextImg },
-    { name: "Next", img: nextImg },
-    { name: "Next", img: nextImg },
+    { name: "AWS", img: awsImg },
+    { name: "Node.js", img: nodeImg },
+    { name: "Python", img: pythonImg },
+    { name: "REST API", img: restImg },
+    { name: "SQL/noSQL", img: dbImg },
+    { name: "Other techs...", img: dotImg },
   ];
   return (
-    <div className="flex flex-col min-h-screen transition-all duration-1000 bg-slate-50 text-slate-900 dark:text-slate-50 dark:bg-slate-900">
+    <div className="flex flex-col min-h-screen text-xl transition-all duration-1000 bg-slate-50 text-slate-900 dark:text-slate-50 dark:bg-slate-900">
       <Navbar />
 
       <section id="#Home" className="relative h-screen bg-fixed bg-cover">
@@ -63,7 +95,7 @@ const Home = () => {
               <svg
                 viewBox="0 0 200 200"
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-auto w-72 md:w-96 animate-blob moving-blob text-sky-50"
+                className="h-auto lg:w-96 md:animate-blob md:moving-blob text-sky-50"
               >
                 <path
                   fill="#1E293B"
@@ -92,7 +124,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="About" className="relative w-full mt-5">
+      <section id="About" className="relative h-auto w-full md:h-[60vh] mt-5">
         <div className="max-w-screen-xl px-4 mx-auto about">
           <h2 className="text-3xl font-semibold text-center">About me</h2>
           <div className="flex flex-wrap items-center justify-between mt-6">
@@ -104,10 +136,12 @@ const Home = () => {
               />
             </div>
             <div className="w-full mt-6 md:w-6/12 lg:w-7/12 xl:w-6/12 md:mt-0">
-              <div className="text-xl font-semibold text">
-                A <span className="text-sky-400">Full-Stack Developer</span>
+              <div className="font-semibold">
+                <span className="italic text-sky-400">
+                  "Friendly neighborhood Developer-Man" :)
+                </span>
               </div>
-              <p className="mt-2 text-justify">
+              <p className="mt-2 text-base text-justify lg:text-xl">
                 For me, challenges are what define who we are. Stepping out of
                 the comfort zone can be tough, but that is exactly what
                 strengthens us. Therefore, I always try my best to become a
@@ -135,15 +169,15 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="relative mt-5 bg-fixed bg-cover">
+      <section className="relative mt-5 bg-fixed md:h-[45vh] bg-cover">
         <div className="flex flex-col justify-center">
           <h2 className="text-3xl font-semibold text-center">Stacks</h2>
           <div className="flex justify-center w-full">
-            <div className="flex flex-wrap items-center justify-around w-full mt-6 xl:w-2/3">
+            <div className="flex flex-wrap items-center justify-around w-full mt-6 md:flex-row xl:w-2/3">
               {stacks.map((stack, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center w-1/2 h-40 my-2 mr-2 font-medium border-4 md:w-1/5 rounded-xl border-slate-900 dark:border-slate-50"
+                  className="flex flex-col items-center w-1/4 h-40 my-2 mr-2 text-base font-medium border-4 max md:w-1/6 rounded-xl border-slate-900 dark:border-slate-50"
                 >
                   {stack.name}
                   <img
@@ -158,23 +192,59 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="relative bg-fixed bg-cover mt-">
-        <div className="flex flex-col mt-10x">
+      <section className="relative bg-fixed bg-cover min-h-[60vh]">
+        <div className="flex flex-col mt-10">
           <h2 className="text-3xl font-semibold text-center delay-0">
-            Experiences
+            Projects
           </h2>
           <Timeline />
         </div>
       </section>
 
-      <section className="contact" id="contact">
-        {/* Contact section content */}
+      <section className="relative bg-fixed bg-cover min-h-[60vh]" id="contact">
+        <h2 className="text-3xl font-semibold text-center delay-0">Contact</h2>
+        <div className="flex flex-col w-3/4 m-auto mt-10 md:justify-around md:flex-row">
+          <div className="w-2/3 md:w-[40%] flex justify-center h-full py-6">
+            <div className="items-start">
+              <h2 className="text-lg font-bold">Come and say hi!</h2>
+              <p>My contact: </p>
+              <div className="mt-10">
+                <div className="flex items-center mt-5">
+                  <BookUser />
+                  <div className="ml-10">
+                    <div className="font-semibold">Address:</div>
+                    <div className="sub-title">Helsinki, Finland</div>
+                  </div>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Mail />
+                  <div className="ml-10">
+                    <div className="font-semibold">Email:</div>
+                    <div onClick={handleEmailClick} className="cursor-pointer">
+                      anhlequang1998@gmail.com
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center mt-5">
+                  <Smartphone />
+                  <div className="ml-10">
+                    <div className="font-semibold">Phone number:</div>
+                    <div className="sub-title">+358 46 9666394</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-3/4 md:w-[40%] mt-5 md:mt-0">
+            <ContactForm />
+          </div>
+        </div>
       </section>
 
       <div className="flex flex-col items-center">
-        <p className="fixed left-1 bottom-20 z-[9999] after:content-[''] text-xs font-thin transform rotate-90">
+        <p className="animate-pulse z-0 fixed left-[-60px] lg:left-0 bottom-64 after:content-[''] text-xs font-thin transform transition duration-300 rotate-90">
           anhlequang1998@gmail.com
-          <span className="after:content-[''] after:absolute after:w-1/2 after:h-0.5 after:bg-gray-400 after:right-0 after:bottom-0"></span>
+          <span className="after:content-[''] after:absolute after:w-1/2 after:h-0.5 after:right-0 after:bottom-0"></span>
         </p>
       </div>
 
