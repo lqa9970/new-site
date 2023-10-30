@@ -105,7 +105,7 @@ const Home = () => {
               </svg>
             </div>
           </div>
-          <a href="#About" className="justify-center">
+          <a href="" className="justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

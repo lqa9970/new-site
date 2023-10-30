@@ -26,24 +26,24 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <a href="#About" className="hover:text-sky-400">
+              <Link to="/" className="hover:text-sky-400">
                 About me
-              </a>
+              </Link>
             </li>
             <li>
-              <Link to="/tech/#stack" className="hover:text-sky-400">
+              <Link to="/tech" className="hover:text-sky-400">
                 Stacks
               </Link>
             </li>
             <li>
-              <Link to="/tech#projects" className="hover:text-sky-400">
+              <Link to="/tech" className="hover:text-sky-400">
                 Projects
               </Link>
             </li>
             <li>
-              <a href="#contact" className="hover:text-sky-400">
+              <Link to="/" className="hover:text-sky-400">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
           {/* <button className="hidden text-base lg:flex">

@@ -45,14 +45,14 @@ const ContactForm = () => {
     <div className="flex items-center justify-center ">
       <form
         onSubmit={handleSubmit}
-        className="px-8 pt-6 pb-8 mb-4 rounded hover:shadow-md dark:shadow-slate-400 w-96 text-end"
+        className="px-8 pt-6 pb-8 mb-4 rounded hover:shadow-md dark:shadow-slate-400 w-96"
       >
         <div className="mb-4">
           <label className="block mb-2 font-bold " htmlFor="name">
             Name
           </label>
           <input
-            className="w-full px-3 py-2 text-base leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline text-end"
+            className="w-full px-3 py-2 text-base leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
             id="name"
             name="name"
             type="text"
@@ -66,7 +66,7 @@ const ContactForm = () => {
             Email address
           </label>
           <input
-            className="w-full px-3 py-2 text-base leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline text-end"
+            className="w-full px-3 py-2 text-base leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
             id="email"
             name="email"
             type="email"
@@ -74,16 +74,13 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleInputChange}
           />
-          <p className="mt-1 text-xs italic text-slate-600 dark:text-slate-200">
-            *Your email will not be shared.
-          </p>
         </div>
         <div className="mb-6">
           <label className="block mb-2 font-bold " htmlFor="message">
             Message
           </label>
           <textarea
-            className="w-full px-3 py-2 text-base leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline text-end"
+            className="w-full px-3 py-2 text-base leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
             id="message"
             name="message"
             rows={5}
@@ -94,10 +91,10 @@ const ContactForm = () => {
         </div>
         <div className="flex items-center justify-end">
           <button
-            className="px-4 py-2 text-lg font-semibold bg-blue-500 rounded text-slate-50 dark:text-slate-900 hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+            className="px-4 py-2 text-lg font-semibold rounded bg-slate-50 dark:text-slate-900 hover:bg-sky-400 focus:outline-none focus:shadow-outline"
             type="submit"
           >
-            Send message
+            Send me a line!
           </button>
         </div>
       </form>
