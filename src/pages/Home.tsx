@@ -91,14 +91,13 @@ const Home = () => {
                 </span>
               </div>
             </div>
-            <div className="w-2/5 svg-container">
+            <div className="w-2/5 overflow-hidden svg-container animate-bounce">
               <svg
                 viewBox="0 0 200 200"
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-auto lg:w-96 md:animate-blob md:moving-blob text-sky-50"
+                className="h-auto fill-current lg:w-96 animate-blob moving-blob"
               >
                 <path
-                  fill="#1E293B"
                   d="M43.1,-22.6C55.7,-3,65.8,20.4,58.1,33.2C50.5,45.9,25.3,48,-0.6,48.4C-26.5,48.8,-53.1,47.4,-61.2,34.3C-69.3,21.3,-59,-3.4,-45.7,-23.4C-32.4,-43.4,-16.2,-58.8,-0.5,-58.5C15.2,-58.2,30.4,-42.3,43.1,-22.6Z"
                   transform="translate(100 100)"
                 />
@@ -124,10 +123,13 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="About" className="relative h-auto w-full md:h-[60vh] mt-5">
+      <section
+        id="About"
+        className="relative h-auto w-full md:min-h-[60vh] my-5"
+      >
         <div className="max-w-screen-xl px-4 mx-auto about">
           <h2 className="text-3xl font-semibold text-center">About me</h2>
-          <div className="flex flex-wrap items-center justify-between mt-6">
+          <div className="flex flex-wrap items-center justify-between mt-8">
             <div className="w-full md:w-5/12 lg:w-4/12 xl:w-5/12">
               <img
                 src={laptopImage}
@@ -142,34 +144,30 @@ const Home = () => {
                 </span>
               </div>
               <p className="mt-2 text-base text-justify lg:text-xl">
-                For me, challenges are what define who we are. Stepping out of
-                the comfort zone can be tough, but that is exactly what
-                strengthens us. Therefore, I always try my best to become a
-                better version of myself throughout every day, every journey I
-                take.
+                As a full-stack developer with a primary focus on frontend
+                technologies, my proficiency lies in crafting user-friendly
+                applications and websites that are both visually appealing and
+                functionally robust. I specialize in writing efficient,
+                code-heavy applications while ensuring seamless user
+                experiences. My expertise extends beyond initial development; I
+                excel in maintaining codebases and optimizing frontend
+                performance, enhancing the overall quality of digital
+                interactions.
                 <br />
                 <br />
-                As a cook, my passion and imagination help me bring every corner
-                of the whole world to my kitchen. From a noisy, crowded street
-                of Hong Kong, Taiwan, to a classy, elegant evening in a French
-                restaurant, with champagne and slow music.
-                <br />
-                <br />
-                As a developer, I explore new frameworks and libraries every day
-                to improve my skill pool. I am highly familiar with:
-                <br />
-                JavaScript | TypeScript | React | Vue | Angular | mySQL |
-                RESTful APIs | Git | Docker ... and more
-                <br />
-                <br />
-                Hmm, who said you can't have the best of both worlds?{" "}
+                Challenges serve as my driving force, igniting my passion for
+                problem-solving in the ever-evolving landscape of web
+                development. Continually striving for improvement, I remain
+                dedicated to refining my skills and knowledge in this dynamic
+                field, ensuring that I stay ahead of the curve and deliver
+                exceptional results in every project I undertake.{" "}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="relative mt-5 bg-fixed md:h-[45vh] bg-cover">
+      <section className="relative mt-5 bg-fixed md:min-h-[45vh] bg-cover">
         <div className="flex flex-col justify-center">
           <h2 className="text-3xl font-semibold text-center">Stacks</h2>
           <div className="flex justify-center w-full">
@@ -220,7 +218,10 @@ const Home = () => {
                   <Mail />
                   <div className="ml-10">
                     <div className="font-semibold">Email:</div>
-                    <div onClick={handleEmailClick} className="cursor-pointer">
+                    <div
+                      onClick={handleEmailClick}
+                      className="transition-all duration-300 cursor-pointer hover:animate-pulse hover:scale-110 hover:text-sky-400"
+                    >
                       anhlequang1998@gmail.com
                     </div>
                   </div>
@@ -242,7 +243,7 @@ const Home = () => {
       </section>
 
       <div className="flex flex-col items-center">
-        <p className="animate-pulse z-0 fixed left-[-60px] lg:left-0 bottom-64 after:content-[''] text-xs font-thin transform transition duration-300 rotate-90">
+        <p className="animate-pulse z-0 fixed left-[-70px] lg:left-0 bottom-64 after:content-[''] text-xs font-thin transform transition duration-300 rotate-90">
           anhlequang1998@gmail.com
           <span className="after:content-[''] after:absolute after:w-1/2 after:h-0.5 after:right-0 after:bottom-0"></span>
         </p>

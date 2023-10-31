@@ -13,17 +13,3 @@
 .moving-blob {
   animation: moveBlob 4s infinite; /* Adjust the animation duration and iteration count as needed */
 }
-
-@keyframes chase {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
-
-.chasing-element {
-  animation: chase 3s infinite linear;
-  transition: transform 0.3s ease-in-out;
-}
