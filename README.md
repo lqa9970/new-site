@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Progress:
+
+1.  [✔] Project init
+2.  [✔] Config routers
+3.  [✔] Create pages
+4.  [✔] Create components
+5.  [✔] Config deployment
+6.  [✘] Fix timeline and sidebar
+7.  [✘] Testing(?)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
