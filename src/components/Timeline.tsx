@@ -258,7 +258,7 @@ const Timeline = () => {
                   </span>
                 )}
                 {project.client && (
-                  <span className="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300 ml-3">
+                  <span className="bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300 ml-3">
                     Client
                   </span>
                 )}
