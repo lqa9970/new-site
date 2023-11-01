@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Image } from "../types";
 import ImgCar from "./ImgCar";
-import { useCVHubStore, useDOFStore } from "../store/store";
+import { useCVHubStore, useCrackerStore, useDOFStore } from "../store/store";
 
 //images
 import blank from "../images/blank.jpg";
@@ -31,6 +31,7 @@ const Timeline = () => {
 
   const cvhubImages = useCVHubStore((state) => state.images);
   const dofImages = useDOFStore((state) => state.images);
+  const crackerImages = useCrackerStore((state) => state.images);
 
   const Projects = [
     {
@@ -121,7 +122,7 @@ const Timeline = () => {
         "Material UI",
         "...",
       ],
-      images: [{ id: 1, img: blank, title: "Default" }],
+      images: crackerImages,
       latest: false,
     },
     {

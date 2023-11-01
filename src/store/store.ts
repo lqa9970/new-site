@@ -27,6 +27,11 @@ import dof4 from "../images/env.png";
 import dof5 from "../images//home.png";
 import dof6 from "../images/sandbox.png";
 
+import cracker1 from "../images/crackerCoin.png";
+import cracker2 from "../images/crackerDark.png";
+import cracker3 from "../images/crackerHome.png";
+import cracker4 from "../images/crackerTheme.png";
+
 type ImageState = {
   images: Image[];
 };
@@ -67,6 +72,16 @@ export const useDOFStore = create<ImageState>((set, get) => ({
     { id: 4, title: "Admin page", img: dof4 },
     { id: 5, title: "Search tool", img: dof5 },
     { id: 6, title: "CV page", img: dof6 },
+  ],
+  getAllImages: () => get().images,
+}));
+
+export const useCrackerStore = create<ImageState>((set, get) => ({
+  images: [
+    { id: 1, title: "Home page", img: cracker1 },
+    { id: 2, title: "CV Preview", img: cracker2 },
+    { id: 3, title: "Editing page", img: cracker3 },
+    { id: 4, title: "Admin page", img: cracker4 },
   ],
   getAllImages: () => get().images,
 }));
