@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
-import Navbar from "../components/Navbar";
+import { HashLink } from "react-router-hash-link";
 
 import laptopImage from "../images/laptop2.jpg";
 import Footer from "../components/Footer";
@@ -19,12 +18,10 @@ const Home = () => {
   };
   return (
     <div className="flex flex-col min-h-screen text-xl transition-all duration-1000 bg-slate-50 text-slate-700 dark:text-slate-50 dark:bg-slate-900">
-      <Navbar />
-
-      <section id="#Home" className="relative h-screen bg-fixed bg-cover">
+      <section id="home" className="relative h-screen bg-fixed bg-cover">
         <div className="flex flex-col items-center p-4 h-5/6">
-          <div className="z-10 flex items-start justify-between w-full h-auto pl-8 my-auto ml-3 md:px-10">
-            <div className="flex flex-col justify-center h-full">
+          <div className="z-10 flex items-start justify-between w-full h-auto my-auto ml-3 md:pl-8 md:px-10">
+            <div className="flex flex-col justify-start w-1/2 min-h-[300px] md:h-full">
               <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                 Hi, my name is
               </div>
@@ -67,7 +64,7 @@ const Home = () => {
               </svg>
             </div>
           </div>
-          <a href="" className="justify-center">
+          <HashLink to="/#about" className="justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -82,13 +79,13 @@ const Home = () => {
                 d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25"
               />
             </svg>
-          </a>
+          </HashLink>
         </div>
       </section>
 
       <section
-        id="About"
-        className="relative h-auto w-full md:min-h-[60vh] my-5"
+        id="about"
+        className="relative pt-32 h-auto w-full md:min-h-[60vh]"
       >
         <div className="max-w-screen-xl px-4 mx-auto about">
           <h2 className="text-3xl font-semibold text-center">About me</h2>
@@ -130,7 +127,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="relative mt-5 bg-fixed md:min-h-[45vh] bg-cover">
+      <section
+        id="stacks"
+        className="relative pt-32 bg-fixed md:min-h-[45vh] bg-cover"
+      >
         <div className="flex flex-col justify-center">
           <h2 className="text-3xl font-semibold text-center">Stacks</h2>
           <div className="flex justify-center w-full">
@@ -153,8 +153,11 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="relative bg-fixed bg-cover min-h-[60vh]">
-        <div className="flex flex-col mt-10">
+      <section
+        id="timeline"
+        className="relative bg-fixed pt-32 bg-cover min-h-[60vh]"
+      >
+        <div className="flex flex-col">
           <h2 className="text-3xl font-semibold text-center delay-0">
             Projects
           </h2>
@@ -162,10 +165,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="relative bg-fixed bg-cover min-h-[60vh]" id="contact">
+      <section id="contact" className="relative bg-fixed bg-cover min-h-[60vh]">
         <h2 className="text-3xl font-semibold text-center delay-0">Contact</h2>
         <div className="flex flex-col w-3/4 m-auto mt-10 md:justify-around md:flex-row">
-          <div className="w-2/3 md:w-[40%] flex justify-center h-full py-6">
+          <div className="w-2/3 md:w-[40%] flex justify-center h-full m-auto py-6">
             <div className="items-start">
               <h2 className="text-lg font-bold">Come and say hi!</h2>
               <p>My contact: </p>

@@ -236,7 +236,8 @@ const Timeline = () => {
         {Projects.map((project) => (
           <div
             onClick={() => openModal(project)}
-            className="transition duration-300 rounded-xl transform cursor-pointer hover:translate-y-[-20px] hover:shadow-lg hover:dark:shadow-slate-600"
+            className="transition duration-300 rounded-xl transform cursor-pointer pr-4 hover:translate-y-[-20px] hover:shadow-lg hover:dark:shadow-slate-600"
+            key={project.id}
           >
             <li className="pb-2 mb-10 ml-6 text-slate-700 dark:text-slate-50">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-slate-50 dark:ring-slate-900 dark:bg-blue-900">

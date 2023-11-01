@@ -1,11 +1,5 @@
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import Timeline from "../components/Timeline";
-// images
-import reactImg2 from "../images/react-1-logo-svg-vector.svg";
-import vueImg from "../images/vue3.png";
-import angularImg from "../images/angular.png";
-import nextImg from "../images/next.png";
 import { useImageStore } from "../store/store";
 
 const Technical = () => {
@@ -14,9 +8,10 @@ const Technical = () => {
   return (
     <>
       <div className="flex flex-col min-h-screen transition-all duration-1000 bg-slate-50 text-slate-900 dark:text-slate-50 dark:bg-slate-900">
-        <Navbar />
-
-        <section className="relative mt-5 bg-fixed md:min-h-[45vh] bg-cover">
+        <section
+          id="stacks"
+          className="relative mt-5 bg-fixed md:min-h-[45vh] bg-cover"
+        >
           <div className="flex flex-col justify-center">
             <h2 className="text-3xl font-semibold text-center">Stacks</h2>
             <div className="flex justify-center w-full">
@@ -39,7 +34,7 @@ const Technical = () => {
           </div>
         </section>
 
-        <section className="relative bg-fixed bg-cover">
+        <section id="timeline" className="relative bg-fixed bg-cover">
           <div className="flex flex-col mt-10">
             <h2 className="text-3xl font-semibold text-center delay-0">
               Experiences

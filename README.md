@@ -5,8 +5,9 @@
 3.  [✔] Create pages
 4.  [✔] Create components
 5.  [✔] Config deployment
-6.  [✘] Fix timeline and sidebar
-7.  [✘] Testing(?)
+6.  [✔] Fix timeline
+7.  [✘] Fix sidebar
+8.  [✘] Testing(?)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
