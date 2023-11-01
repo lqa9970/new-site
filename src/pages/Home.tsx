@@ -7,55 +7,18 @@ import Footer from "../components/Footer";
 import Timeline from "../components/Timeline";
 import ContactForm from "../components/ContactForm";
 
-// images
-import reactImg2 from "../images/react-1-logo-svg-vector.svg";
-import vueImg from "../images/vue3.png";
-import angularImg from "../images/angular.png";
-import nextImg from "../images/next.png";
-import tsImg from "../images/Ts.png";
-import awsImg from "../images/aws.png";
-import nodeImg from "../images/node3.jpg";
-import pythonImg from "../images/python3.png";
-import restImg from "../images/rest.png";
-import dbImg from "../images/database.jpg";
-import dotImg from "../images/dot.png";
-
 //icons
 import { BookUser, Mail, Smartphone } from "lucide-react";
+import { useImageStore } from "../store/store";
 
 const Home = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const stacks = useImageStore((state) => state.images);
 
   const handleEmailClick = () => {
     window.location.href = `mailto:${"anhlequang1998@gmail.com"}`;
   };
-
-  const stacks = [
-    { name: "React", img: reactImg2 },
-    { name: "TypeScript", img: tsImg },
-    { name: "Vue", img: vueImg },
-    { name: "Angular", img: angularImg },
-    { name: "AWS", img: awsImg },
-    { name: "Node.js", img: nodeImg },
-    { name: "Python", img: pythonImg },
-    { name: "REST API", img: restImg },
-    { name: "SQL/noSQL", img: dbImg },
-    { name: "Other techs...", img: dotImg },
-  ];
   return (
-    <div className="flex flex-col min-h-screen text-xl transition-all duration-1000 bg-slate-50 text-slate-900 dark:text-slate-50 dark:bg-slate-900">
+    <div className="flex flex-col min-h-screen text-xl transition-all duration-1000 bg-slate-50 text-slate-700 dark:text-slate-50 dark:bg-slate-900">
       <Navbar />
 
       <section id="#Home" className="relative h-screen bg-fixed bg-cover">
@@ -172,16 +135,16 @@ const Home = () => {
           <h2 className="text-3xl font-semibold text-center">Stacks</h2>
           <div className="flex justify-center w-full">
             <div className="flex flex-wrap items-center justify-around w-full mt-6 md:flex-row xl:w-2/3">
-              {stacks.map((stack, index) => (
+              {stacks.map((stack) => (
                 <div
-                  key={index}
+                  key={stack.id}
                   className="flex flex-col items-center w-1/4 h-40 my-2 mr-2 text-base font-medium border-4 max md:w-1/6 rounded-xl border-slate-900 dark:border-slate-50"
                 >
-                  {stack.name}
+                  {stack.title}
                   <img
                     className="object-cover w-auto border-4 rounded-full border-slate-900 dark:border-slate-50 h-2/3"
                     src={stack.img}
-                    alt={stack.name}
+                    alt={stack.title}
                   />
                 </div>
               ))}

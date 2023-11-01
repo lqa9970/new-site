@@ -1,17 +1,10 @@
 import { useState } from "react";
 import { Image } from "../types";
+import ImgCar from "./ImgCar";
+import { useCVHubStore, useDOFStore } from "../store/store";
 
 //images
-import dof1 from "../images/createenv.png";
-import dof2 from "../images/createpro.png";
-import dof3 from "../images/createsand.png";
-import dof4 from "../images/env.png";
-import dof5 from "../images//home.png";
-import dof6 from "../images/sandbox.png";
-import img1 from "../images/next.png";
-import img2 from "../images/vue.png";
-import img3 from "../images/angular.png";
-import ImgCar from "./ImgCar";
+import blank from "../images/blank.jpg";
 
 type Project = {
   id: number;
@@ -21,6 +14,7 @@ type Project = {
   techs: string[];
   images: Image[];
   latest: boolean;
+  link?: string;
 };
 
 const Timeline = () => {
@@ -31,9 +25,12 @@ const Timeline = () => {
     description: "React is a JavaScript library for building user interfaces.",
     date: "0-0-0000",
     techs: ["Python", "Django REST Framework", "API"],
-    images: [{ img: img1, title: "Default", id: 0 }],
+    images: [{ img: blank, title: "Default", id: 0 }],
     latest: false,
   });
+
+  const cvhubImages = useCVHubStore((state) => state.images);
+  const dofImages = useDOFStore((state) => state.images);
 
   const Projects = [
     {
@@ -41,10 +38,11 @@ const Timeline = () => {
       title: "Personal Site Remastered",
       date: "November 2023",
       description:
-        "This very own website. It has been recently updated and redesigned, developed with only React, TypeScript, and Tailwind CSS",
-      techs: ["TypeScript", "React", "Tailwind CSS"],
-      images: [{ id: 1, img: img1, title: "Default" }],
+        "This very own website. It has been recently updated and redesigned, developed with only React, TypeScript, and Tailwind CSS with state management using Zustand.",
+      techs: ["TypeScript", "React", "Tailwind CSS", "Zustand", "..."],
+      images: [{ id: 1, img: blank, title: "Default" }],
       latest: true,
+      link: "https://github.com/lqa9970/new-site",
     },
     {
       id: 2,
@@ -62,7 +60,7 @@ const Timeline = () => {
         "Jira",
         "...",
       ],
-      images: [{ id: 1, img: img1, title: "Default" }],
+      images: cvhubImages,
       latest: true,
     },
     {
@@ -74,38 +72,7 @@ const Timeline = () => {
       description:
         "Collaborated in a 3-member team to develop and maintain the Orion DevOps Foundation, an application for managing and connecting Azure resources. Designed and maintained the application's portal (UI) using TypeScript, React and Material UI, ensuring a user-friendly experience while leveraging Azure DevOps for reporting, task organization, pipelines, builds, and testings",
       techs: ["TypeScript", "React", "Material UI", "API"],
-      images: [
-        {
-          id: 1,
-          img: dof1,
-          title: "Create env",
-        },
-        {
-          id: 2,
-          img: dof2,
-          title: "Create env",
-        },
-        {
-          id: 3,
-          img: dof3,
-          title: "Create env",
-        },
-        {
-          id: 4,
-          img: dof4,
-          title: "Create env",
-        },
-        {
-          id: 5,
-          img: dof5,
-          title: "Create env",
-        },
-        {
-          id: 6,
-          img: dof6,
-          title: "Create env",
-        },
-      ],
+      images: dofImages,
       latest: false,
     },
     {
@@ -114,8 +81,8 @@ const Timeline = () => {
       date: "September 2022 - March 2023",
       description:
         "Improved and managed the University of Helsinki's GIDPROvis application by employing Python, Django REST Framework for data modeling and API system, Vue 3 for user interface, and PostgreSQL for database. Migrated the application to a container-based server deployment, ensuring scalability and improved efficiency.",
-      techs: ["Python", "Django REST Framework", "API"],
-      images: [{ id: 1, img: img1, title: "Default" }],
+      techs: ["Python", "Django REST Framework", "API", "..."],
+      images: [{ id: 1, img: blank, title: "Default" }],
       latest: false,
     },
     {
@@ -135,8 +102,9 @@ const Timeline = () => {
         "MongoDB Atlas",
         "...",
       ],
-      images: [{ id: 1, img: img1, title: "Default" }],
+      images: [{ id: 1, img: blank, title: "Default" }],
       latest: false,
+      link: "https://github.com/lqa9970/crAcker-3.0",
     },
     {
       id: 6,
@@ -153,7 +121,7 @@ const Timeline = () => {
         "Material UI",
         "...",
       ],
-      images: [{ id: 1, img: img1, title: "Default" }],
+      images: [{ id: 1, img: blank, title: "Default" }],
       latest: false,
     },
     {
@@ -163,7 +131,7 @@ const Timeline = () => {
       description:
         "Contributed to the development of the frontend UI system utilizing technologies such as React, Next.js, SCSS, and other relevant libraries. Played a key role in implementing the planning phase for the migration to Shopify, guaranteeing a smooth transition process for the entire team. This involved the implementation of a new user interface, collaborating closely with cross-functional teams to align the project with organizational goals and user experience standards.",
       techs: ["TypeScript", "React", "Scss", "Next.js", "..."],
-      images: [{ id: 1, img: img1, title: "Default" }],
+      images: [{ id: 1, img: blank, title: "Default" }],
       latest: false,
     },
   ];
@@ -179,19 +147,56 @@ const Timeline = () => {
 
   const renderChosenModal = (chosen: Project) => {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center h-screen">
+      <div className="fixed inset-0 z-50 flex items-center justify-center h-screen text-base md:text-xl text-slate-50 dark:text-slate-700">
         <div
           onClick={closeModal}
           className="fixed inset-0 flex items-center bg-opacity-50 backdrop-blur-sm"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative flex w-2/3 h-[800px] p-8 m-auto bg-slate-900 dark:bg-slate-50"
+            className="relative flex flex-col w-2/3 h-[800px] p-8 m-auto bg-slate-700 dark:bg-slate-50 overflow-hidden"
           >
-            <div className="w-full">
-              <ImgCar images={chosen.images} />
+            <div className="mb-8 h-1/3 md:h-full max-h-[420px]">
+              <ImgCar images={chosen.images} link={chosen.link} />
             </div>
-            <button className="absolute top-4 right-4" onClick={closeModal}>
+            <div className="flex flex-col justify-around h-full text-justify md:justify-end">
+              <p className="">{chosen.description}</p>
+              <br />
+              <div className="">
+                Used Technologies:{" "}
+                <span className="italic">{chosen.techs.join(", ")}</span>
+              </div>
+              <br />
+              {chosen.link && (
+                <a
+                  href={chosen.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-around px-4 py-2 text-sm font-bold text-gray-800 bg-gray-300 w-min rounded-xl hover:bg-gray-400"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-4 h-4 mr-2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
+                    />
+                  </svg>
+
+                  <span>Code</span>
+                </a>
+              )}
+            </div>
+            <button
+              className="absolute text-red-500 top-4 right-4"
+              onClick={closeModal}
+            >
               X
             </button>
           </div>
@@ -208,10 +213,10 @@ const Timeline = () => {
             onClick={() => openModal(project)}
             className="transition duration-300 rounded-xl transform cursor-pointer hover:translate-y-[-20px] hover:shadow-lg hover:dark:shadow-slate-600"
           >
-            <li className="pb-2 mb-10 ml-6">
+            <li className="pb-2 mb-10 ml-6 text-slate-700 dark:text-slate-50">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-slate-50 dark:ring-slate-900 dark:bg-blue-900">
                 <svg
-                  className=" duration-1000 w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
+                  className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -231,7 +236,9 @@ const Timeline = () => {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                 {project.date}
               </time>
-              <p className="mb-4 text-lg font-normal">{project.description}</p>
+              <div className="mb-4 text-lg font-normal truncate">
+                {project.description}
+              </div>
               <p className="text-lg italic">
                 Tech-stack:{" "}
                 <span className="opacity-60">{project.techs.join(", ")}</span>
