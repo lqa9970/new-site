@@ -32,6 +32,9 @@ import cracker2 from "../images/crackerDark.png";
 import cracker3 from "../images/crackerHome.png";
 import cracker4 from "../images/crackerTheme.png";
 
+import ecommerce1 from "../images/signin.png";
+import ecommerce2 from "../images/cart.png";
+
 type ImageState = {
   images: Image[];
 };
@@ -82,6 +85,14 @@ export const useCrackerStore = create<ImageState>((set, get) => ({
     { id: 2, title: "CV Preview", img: cracker2 },
     { id: 3, title: "Editing page", img: cracker3 },
     { id: 4, title: "Admin page", img: cracker4 },
+  ],
+  getAllImages: () => get().images,
+}));
+
+export const useEcomStore = create<ImageState>((set, get) => ({
+  images: [
+    { id: 1, title: "Home page", img: ecommerce1 },
+    { id: 2, title: "CV Preview", img: ecommerce2 },
   ],
   getAllImages: () => get().images,
 }));

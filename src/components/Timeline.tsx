@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { Image } from "../types";
 import ImgCar from "./ImgCar";
-import { useCVHubStore, useCrackerStore, useDOFStore } from "../store/store";
+import {
+  useCVHubStore,
+  useCrackerStore,
+  useDOFStore,
+  useEcomStore,
+} from "../store/store";
 
 //images
 import blank from "../images/blank.jpg";
@@ -15,6 +20,7 @@ type Project = {
   images: Image[];
   latest: boolean;
   link?: string;
+  client?: boolean;
 };
 
 const Timeline = () => {
@@ -32,6 +38,7 @@ const Timeline = () => {
   const cvhubImages = useCVHubStore((state) => state.images);
   const dofImages = useDOFStore((state) => state.images);
   const crackerImages = useCrackerStore((state) => state.images);
+  const ecommerceImages = useEcomStore((state) => state.images);
 
   const Projects = [
     {
@@ -63,6 +70,7 @@ const Timeline = () => {
       ],
       images: cvhubImages,
       latest: true,
+      client: true,
     },
     {
       id: 3,
@@ -75,6 +83,7 @@ const Timeline = () => {
       techs: ["TypeScript", "React", "Material UI", "API"],
       images: dofImages,
       latest: false,
+      client: true,
     },
     {
       id: 4,
@@ -85,6 +94,7 @@ const Timeline = () => {
       techs: ["Python", "Django REST Framework", "API", "..."],
       images: [{ id: 1, img: blank, title: "Default" }],
       latest: false,
+      client: true,
     },
     {
       id: 5,
@@ -103,9 +113,9 @@ const Timeline = () => {
         "MongoDB Atlas",
         "...",
       ],
-      images: [{ id: 1, img: blank, title: "Default" }],
+      images: ecommerceImages,
       latest: false,
-      link: "https://github.com/lqa9970/crAcker-3.0",
+      link: "https://github.com/lqa9970/ElectronicStore",
     },
     {
       id: 6,
@@ -124,6 +134,7 @@ const Timeline = () => {
       ],
       images: crackerImages,
       latest: false,
+      link: "https://github.com/lqa9970/crAcker-3.0",
     },
     {
       id: 7,
@@ -173,7 +184,7 @@ const Timeline = () => {
                   href={chosen.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-around px-4 py-2 text-sm font-bold text-gray-800 bg-gray-300 w-min rounded-xl hover:bg-gray-400"
+                  className="inline-flex items-center justify-around px-4 py-2 text-sm font-bold text-slate-700 dark:text-slate-50 bg-slate-300 dark:bg-slate-600 w-min rounded-xl hover:shadow-md"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -190,15 +201,28 @@ const Timeline = () => {
                     />
                   </svg>
 
-                  <span>Code</span>
+                  <span>Source</span>
                 </a>
               )}
             </div>
             <button
-              className="absolute text-red-500 top-4 right-4"
+              className="absolute p-2 rounded-full fill-current top-4 right-4 hover:shadow-lg"
               onClick={closeModal}
             >
-              X
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             </button>
           </div>
         </div>
@@ -229,8 +253,13 @@ const Timeline = () => {
               <h3 className="flex items-center mb-1 font-semibold text-gray-900 dark:text-white">
                 {project.title}{" "}
                 {project.latest && (
-                  <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
+                  <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-1 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
                     Latest
+                  </span>
+                )}
+                {project.client && (
+                  <span className="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300 ml-3">
+                    Client
                   </span>
                 )}
               </h3>
