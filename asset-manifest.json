@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/new-site/static/css/main.49b3126b.css",
-    "main.js": "/new-site/static/js/main.58a5a565.js",
+    "main.js": "/new-site/static/js/main.b623168e.js",
     "static/js/787.4c172020.chunk.js": "/new-site/static/js/787.4c172020.chunk.js",
     "static/media/cvhome.png": "/new-site/static/media/cvhome.f6983ef9e2448becf6ca.png",
     "static/media/cvpreview.png": "/new-site/static/media/cvpreview.d56ace156f07c79701da.png",
@@ -16,16 +16,20 @@
     "static/media/createpro.png": "/new-site/static/media/createpro.9b9d7f64c6edd1f7d095.png",
     "static/media/createenv.png": "/new-site/static/media/createenv.00681f90a33292781813.png",
     "static/media/database.jpg": "/new-site/static/media/database.db4ae3d45c13bd52b4ee.jpg",
+    "static/media/crackerTheme.png": "/new-site/static/media/crackerTheme.5ed0e8080720288ccbe8.png",
+    "static/media/crackerDark.png": "/new-site/static/media/crackerDark.7634e4f7d4d71e77287f.png",
+    "static/media/crackerHome.png": "/new-site/static/media/crackerHome.7e14c5434c4010f021b3.png",
+    "static/media/crackerCoin.png": "/new-site/static/media/crackerCoin.e6d278b2d7609660bbcf.png",
     "static/media/laptop2.jpg": "/new-site/static/media/laptop2.e6135e47c0cd05de72a4.jpg",
     "static/media/node3.jpg": "/new-site/static/media/node3.20c94615d59927dd1dbe.jpg",
     "static/media/react-1-logo-svg-vector.svg": "/new-site/static/media/react-1-logo-svg-vector.bd6f993d5204ba63e0a437d7ced29cd1.svg",
     "index.html": "/new-site/index.html",
     "main.49b3126b.css.map": "/new-site/static/css/main.49b3126b.css.map",
-    "main.58a5a565.js.map": "/new-site/static/js/main.58a5a565.js.map",
+    "main.b623168e.js.map": "/new-site/static/js/main.b623168e.js.map",
     "787.4c172020.chunk.js.map": "/new-site/static/js/787.4c172020.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.49b3126b.css",
-    "static/js/main.58a5a565.js"
+    "static/js/main.b623168e.js"
   ]
 }
