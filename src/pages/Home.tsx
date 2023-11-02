@@ -208,8 +208,8 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="flex flex-col items-center">
-        <p className="animate-pulse z-0 fixed left-[-70px] lg:left-0 bottom-64 after:content-[''] text-xs font-thin transform transition duration-300 rotate-90">
+      <div className="flex-col items-center hidden md:flex">
+        <p className="animate-pulse z-0 fixed left-[-70px] lg:left-[-20px] bottom-64 uppercase after:content-[''] text-xs font-thin transform rotate-90">
           anhlequang1998@gmail.com
           <span className="after:content-[''] after:absolute after:w-1/2 after:h-0.5 after:right-0 after:bottom-0"></span>
         </p>
